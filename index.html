@@ -1,0 +1,132 @@
+<!doctype html>
+<!--
+  Проста односторінкова портфоліо-страниця для мобільного та десктопу
+  - Заміни ART_NICK та посилання на свої власні, якщо потрібно
+  - Файл: index.html
+  - Відкривай у VS Code -> Live Server або просто відкрий файл в браузері
+-->
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>artqkxx — портфоліо</title>
+
+  <!-- Прості стилі, адаптивна верстка -->
+  <style>
+    /* Задаємо чисту систему шрифтів */
+    :root{
+      --bg: #0f1724;       /* темний фон */
+      --card: #0b1220;     /* карта */
+      --accent: #7c5cff;   /* колір кнопок */
+      --muted: #95a1b3;    /* другорядний текст */
+    }
+    *{box-sizing: border-box}
+    html,body{height:100%;margin:0}
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg),#071029 80%);
+      color:#e6eef8;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+
+    /* Контейнер-картка */
+    .card{
+      width:100%;
+      max-width:420px; /* гарний розмір для телефону */
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px;
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      text-align:center;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .nick{
+      font-size:2.2rem;
+      font-weight:700;
+      letter-spacing:0.02em;
+      margin:0 0 8px 0;
+    }
+    .subtitle{
+      margin:0 0 20px 0;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    /* Ряд кнопок */
+    .buttons{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:12px;
+      text-decoration:none;
+      color:white;
+      font-weight:600;
+      min-width:160px;
+      justify-content:center;
+      background:linear-gradient(90deg, var(--accent), #546cff 140%);
+      transition: transform .12s ease, box-shadow .12s ease;
+      box-shadow: 0 6px 18px rgba(124,92,255,0.18);
+    }
+    a.btn:active{transform:translateY(1px)}
+    a.btn.secondary{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
+      min-width:120px;
+      box-shadow:none;
+    }
+
+    /* Іконки (маленькі svg) */
+    .icon{width:18px;height:18px;display:inline-block;vertical-align:middle}
+
+    /* Підпис внизу */
+    .foot{
+      margin-top:18px;
+      font-size:0.78rem;
+      color:var(--muted);
+    }
+
+    /* Адаптація для дуже великих екранів */
+    @media(min-width:900px){
+      .card{max-width:600px;padding:40px}
+      .nick{font-size:3rem}
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <!-- Заміни nick тут на свій нік, або редагуй файл у VS Code -->
+    <h1 class="nick">artqkxx</h1>
+    <p class="subtitle">Привіт! Це моє просте портфоліо — зв'язатися зі мною через месенджери нижче.</p>
+
+    <div class="buttons">
+      <!-- Telegram with avatar -->
+      <a class="btn" href="https://t.me/dotkaa2" target="_blank" rel="noopener noreferrer">
+        <img src="avatar-telegram.jpg" alt="Telegram avatar" style="width:42px;height:42px;border-radius:50%;object-fit:cover;" />
+        Telegram
+      </a>
+
+      <!-- Instagram with sunset avatar -->
+      <a class="btn secondary" href="https://www.instagram.com/artqkxx/" target="_blank" rel="noopener noreferrer">
+        <img src="avatar-instagram.jpg" alt="Instagram avatar" style="width:42px;height:42px;border-radius:50%;object-fit:cover;" />
+        Instagram
+      </a>
+    </div>
+
+    <p class="foot"></p>
+  </main>
+</body>
+</html>
